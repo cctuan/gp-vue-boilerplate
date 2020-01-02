@@ -33,7 +33,7 @@ export default {
   head () {
     return {
       title: this.title,
-      meta: this.meta
+      meta: this.meta || []
     };
   }
 

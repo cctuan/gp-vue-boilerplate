@@ -11,24 +11,28 @@ export async function generateRouteTemplates (options, routes) {
 
 function getPageTemplate (options, template, pageData) {
 
-  // components
+  // nuxtI18n
 
-  const components = getImportComponents(options, pageData.data);
-  const componentList = Object.keys(components.components).map(key => {
-    return components.components[String(key)];
-  });
   const nuxtI18nPaths = getNuxtI18nPaths(options.nuxtI18n.locales, pageData.data);
+
+  if (nuxtI18nPaths) {
+    template = template.replace('/* PLACEHOLDER_NUXT_I18N_PATHS */', `${nuxtI18nPaths},`);
+  }
 
   // page components & imports
 
-  if (components.imports.length) {
-    template = template.replace('/* PLACEHOLDER_IMPORTS */', `${components.imports.join('\n')}`);
-  }
-  if (componentList.length) {
-    template = template.replace('/* PLACEHOLDER_COMPONENTS */', `\n${componentList.join(',\n')}\n`);
-  }
-  if (nuxtI18nPaths) {
-    template = template.replace('/* PLACEHOLDER_NUXT_I18N_PATHS */', `${nuxtI18nPaths},`);
+  if ('components' in pageData.data && Array.isArray(pageData.data.components)) {
+    const components = getImportComponents(options, pageData.data);
+    const componentList = Object.keys(components.components).map(key => {
+      return components.components[String(key)];
+    });
+
+    if (components.imports.length) {
+      template = template.replace('/* PLACEHOLDER_IMPORTS */', `${components.imports.join('\n')}`);
+    }
+    if (componentList.length) {
+      template = template.replace('/* PLACEHOLDER_COMPONENTS */', `\n${componentList.join(',\n')}\n`);
+    }
   }
 
   return template;
@@ -74,4 +78,5 @@ function getImportComponents (options, pageData) {
     imports: [],
     components: {}
   });
+
 }

@@ -56,6 +56,7 @@ export async function cacheRoutes (options) {
     logWarn('Virtual-Content: request all routes, cache routes for fast startup. options.routesCache', true);
     await cleanCacheDir(PATH_CACHE_DIR);
     routes = await options.adapter.getRoutes(Object.assign({
+      defaultLocale: options.nuxtI18n.defaultLocale,
       locales: options.nuxtI18n.locales.map(locale => locale.code)
     }, options.adapterOptions));
   } else {

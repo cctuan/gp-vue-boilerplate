@@ -1,7 +1,7 @@
 <script>
-import LocalJSON from '@/modules/nuxt-virtual-content/adapter/local-json/PageExtend';
+import PageExtend from '@/modules/nuxt-virtual-content/tmpl/PageExtend';
 export default {
-  extends: LocalJSON,
+  extends: PageExtend,
   nuxtI18n: {
     paths: {
       en: '/',
