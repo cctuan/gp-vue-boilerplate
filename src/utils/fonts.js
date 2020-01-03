@@ -1,21 +1,25 @@
 export function loadFonts () {
-  var preloads = [];
 
   if (navigator.connection && (navigator.connection.effectiveType === 'slow-2g' || navigator.connection.effectiveType === '2g')) {
     return;
   }
 
-  preloads = document.querySelectorAll('link[rel=\'delay-prefetch\']');
-
-  if (preloads.length) {
-    if (linkFeatureDetection()) {
+  if (linkFeatureDetection()) {
+    const preloads = document.querySelectorAll('link[rel=\'delay-prefetch\']');
+    if (preloads.length) {
       prefetchFonts(Array.from(preloads));
-    } else {
-      // not support link rel prefetch
-      const classList = Array.from(preloads).reduce((result, preload) => result.concat(getRegisteredFontClasses(preload.dataset)), []);
-      document.documentElement.classList.add(...classList);
     }
+  } else {
+    // not supported features (prefetch or firefox with preload https://bugzilla.mozilla.org/show_bug.cgi?id=1405761)
+    const links = getAllPrefetchPreloadLinks();
+    const classList = Array.from(links).reduce((result, link) => result.concat(getRegisteredFontClasses(link.dataset)), []);
+    document.documentElement.classList.add(...classList);
   }
+
+}
+
+function getAllPrefetchPreloadLinks () {
+  return document.querySelectorAll('link[rel=\'delay-prefetch\'][as="font"],link[rel=\'preload\'][as="font"]');
 }
 
 export function fontsToLinks (fonts, pattern) {
@@ -42,6 +46,9 @@ export function prepareFonts (fonts) {
 }
 
 function linkFeatureDetection () {
+  if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+    return false;
+  }
   const link = document.createElement('link');
   if ('relList' in link) {
     return link.relList.supports('prefetch');

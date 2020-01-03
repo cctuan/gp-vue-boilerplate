@@ -1,6 +1,6 @@
 {
   "name": "gp-vue-boilerplate",
-  "version": "2.7.0",
+  "version": "2.8.2",
   "description": "Grabarz & Partner Boilerplate",
   "author": "Stephan Gerbeth",
   "contributors": [
@@ -25,7 +25,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "static": "nuxt generate",
-    "static:now": "npm run static && cp now.json dist/website && cd dist/website/ && now",
+    "static:now": "npm run static && cp now.json dist && cd dist/ && now",
     "start": "nuxt start",
     "start:static": "node ./env/static-server.js",
     "production": "npm run build && npm run start",
@@ -113,7 +113,7 @@
     "nuxt-payload-extractor": "0.0.14",
     "nuxt-polyfill": "^1.0.3",
     "rxjs": "^6.5.3",
-    "snyk": "^1.250.0",
+    "snyk": "^1.258.2",
     "upath": "^1.2.0",
     "verge": "^1.10.2",
     "vue-lazy-hydration": "^1.0.0-beta.9",

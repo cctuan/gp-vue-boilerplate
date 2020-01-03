@@ -1,5 +1,28 @@
 # Project Changelog
 
+## [2.8.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.8.1...v2.8.2) (2020-01-03)
+
+
+### Bug Fixes
+
+* **mochawesome-merge:** fix mochawesome-merge travis command ([48f7d58](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/48f7d58b7e959f976a9ea38a600420f776e76835))
+* **videos:** reduced size ([12f7d85](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/12f7d85d7258821efbfa7246de6aad79330e8ab5))
+
+## [2.8.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.8.0...v2.8.1) (2019-12-12)
+
+
+### Bug Fixes
+
+* package.json, package-lock.json & .snyk to reduce vulnerabilities ([6ff4bcd](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/6ff4bcdb58775552afce26719f8c085a0ca217a0))
+
+# [2.8.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.7.0...v2.8.0) (2019-12-10)
+
+
+### Features
+
+* **font-loader:** move preload var ([72aa457](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/72aa45797c6ef23739f3f09af484959908108f9e))
+* **font-loader:** update font-loader ([ed344d0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ed344d0a2c5f81c89bedb6c674db2dbab4b56a7b))
+
 # [2.7.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.6.0...v2.7.0) (2019-12-07)
 
 
