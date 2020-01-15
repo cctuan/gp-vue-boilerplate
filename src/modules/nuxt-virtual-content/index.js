@@ -81,10 +81,13 @@ module.exports = function (options) {
 
   addPlugins(this, options, plugins);
 
-  if (!options.dev && options.isDev) {
-    logWarn('is disabled in development mode');
-  } else {
+  if (
+    !isDevMode(options) &&
+    (isNuxtBuild(this.nuxt) || isNuxtGenerate(this.nuxt))
+  ) {
     setup = moduleSetup(this, options);
+  } else {
+    logWarn('enabled only for build or generate, ignored by development mode');
   }
 
   return setup.then(routes => {
@@ -114,6 +117,18 @@ function addPlugins (moduleScope, options, plugins) {
       options: pluginOptions
     });
   });
+}
+
+function isDevMode (options) {
+  return !options.dev && options.isDev;
+}
+
+function isNuxtBuild (nuxt) {
+  return '_build' in nuxt.options;
+}
+
+function isNuxtGenerate (nuxt) {
+  return '_generate' in nuxt.options;
 }
 
 /**
