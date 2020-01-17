@@ -112,7 +112,7 @@ function addPlugins (moduleScope, options, plugins) {
   };
   plugins.forEach(({ name, mode }) => {
     moduleScope.addPlugin({
-      src: path.resolve(__dirname, `plugins/${name}.tmpl.js`),
+      src: path.resolve(__dirname, `plugins/${name}.js.tmpl`),
       mode,
       options: pluginOptions
     });

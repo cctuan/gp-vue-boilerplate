@@ -193,7 +193,6 @@ module.exports = {
         }
       }
     ],
-    // '@/modules/virtual',
     // '@/modules/codesandbox',
     '@/modules/fix/image',
     '@/modules/svg',

@@ -49,7 +49,8 @@
       ".vcmrc": "json",
       "*.css": "postcss",
       "*.pcss": "postcss",
-      ".*ignore": "ignore"
+      ".*ignore": "ignore",
+      "*.js.tmpl": "javascript"
     },
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
     "path-intellisense.mappings": {
