@@ -1,5 +1,35 @@
 # Project Changelog
 
+## [2.11.3](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.11.2...v2.11.3) (2020-01-23)
+
+
+### Bug Fixes
+
+* **package:** update package json with latest versions ([25a23c4](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/25a23c48e9d29b592734b903168b9e4f076e972f))
+
+## [2.11.2](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.11.1...v2.11.2) (2020-01-21)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([8b15bcb](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/8b15bcbf6a289893cbd4d1bfd1cfcaabad958fa3))
+
+## [2.11.1](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.11.0...v2.11.1) (2020-01-21)
+
+
+### Bug Fixes
+
+* **svg-module:** check if rule exists and then overwrite ([5d68e91](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/5d68e912bb215a248f2de52825a5e102e9123753))
+* **svg-module:** removed svg from the webpack image rule test ([ea56a5d](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/ea56a5d6b6eef18fc49faf335e83aa273aec46d2))
+
+# [2.11.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.10.0...v2.11.0) (2020-01-17)
+
+
+### Features
+
+* **clean:** remove CHANGELOG_PROJECT.md ([80e9c10](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/80e9c1042459c49a48a084a2fbfc0562f68379bc))
+* **optimize:** change prevent-scroll styleclass with data attribute ([2605495](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/commit/26054958fc436b8771904af84a3b108a1122cf68))
+
 # [2.10.0](https://github.com/GrabarzUndPartner/gp-vue-boilerplate/compare/v2.9.0...v2.10.0) (2020-01-06)
 
 
