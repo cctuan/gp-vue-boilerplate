@@ -12,6 +12,8 @@ module.exports = {
   css: [],
   env: {},
 
+  mode: 'spa',
+
   features: {
     store: true,
     layouts: true,
@@ -280,6 +282,44 @@ module.exports = {
           'requestidlecallback': 'MIT License',
           'vue-browserupdate': 'MIT License'
         }
+      }
+    ],
+    [
+      '@/modules/nuxt-generate-custom-component', {
+        publicPath: '/', // Webpack PublicPath
+        buildDist: process.cwd() + '/custom-component-dist', // Wenn  leer wird der dist verwendet, Beispiel: ./dist/nuxt-generate-custom-elements
+
+        filename: 'custom-component',
+        // Wenn gesetzt wird für jeden Custom-Tag eine eigene JS Datei erzeugt.
+        splitJSEntries: false,
+        tags: [
+          {
+            name: 'custom-component-headline',
+            path: '@/components/atoms/Headline.vue',
+            options: {
+              props: {
+                'tag': null,
+                'overline': null,
+                'headline': 'Custom-Component Headline',
+                'subline': null
+              }
+            }
+          },
+          {
+            name: 'custom-component-picture',
+            path: '@/components/atoms/Picture.vue'
+          },
+          {
+            name: 'custom-component-test',
+            path: '@/components/atoms/Test.vue',
+            options: {
+              props: {
+                'prop1': 'Prop 1',
+                'prop2': 'Prop 2'
+              }
+            }
+          }
+        ]
       }
     ]
   ],

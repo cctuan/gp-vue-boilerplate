@@ -40,7 +40,7 @@ export default {
       type: String,
       required: false,
       default () {
-        return 'Lorem Overline';
+        return 'h1';
       }
     },
     overline: {
