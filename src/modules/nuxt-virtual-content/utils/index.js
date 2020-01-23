@@ -54,7 +54,7 @@ export async function cacheRoutes (options) {
   cacheEmpty = !options.routesCache || options.isDev && options.routesCache && !routes || process.env.npm_config_virtual_content_clear_cache;
   if (!routes || routes.length < 1 || cacheEmpty) {
     logWarn('Virtual-Content: request all routes, cache routes for fast startup. options.routesCache', true);
-    await cleanCacheDir(PATH_CACHE_DIR);
+    await cleanCacheDir(PATH_CACHE_PAGES_DIR);
     routes = await options.adapter.getRoutes(Object.assign({
       defaultLocale: options.nuxtI18n.defaultLocale,
       locales: options.nuxtI18n.locales.map(locale => locale.code)
@@ -123,7 +123,7 @@ export async function createStaticComponents (options, routes) {
 
 export function writeDir (filepath) {
   return new Promise(resolve => {
-    if (fs.existsSync(path)) {
+    if (fs.existsSync(filepath)) {
       resolve();
       return;
     }
